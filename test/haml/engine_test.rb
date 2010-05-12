@@ -1250,6 +1250,11 @@ SASS
       render("%div{data_val, :data => {:foo => 'blip', :brat => 'wurst'}}"))
   end
 
+  def test_html5_boolean_attributes
+    assert_equal("<input autofocus name='foo'>\n",
+      render("%input{:name => 'foo', :autofocus => true}", :format => :html5))
+  end
+
   # New attributes
 
   def test_basic_new_attributes
